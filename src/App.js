@@ -76,84 +76,102 @@ const App = () => {
     }
 
   return (
-    <div className="wrapper">
-      <h1>Tasks for today</h1>
-
-{/*-----------FORM---------------*/}
-      <form className="todo-form" onSubmit={handleSubmit}>
-        <div className="input-column">
-          <input type="text" 
-                  placeholder="What to do"
-                  onChange={(e) => setTodo(e.target.value)}
-                  value={todo}
-                  className="todo-input"/>
-          <input type="text" 
-                  placeholder="Description"
-                  onChange={(e) => setDesc(e.target.value)}
-                  value={desc}
-                  className="desc-input"/>
-        </div>
-        <button className="submit-button" 
-                type="submit"
-                >
-                  Add Tasks
-        </button>
-      </form>
-
-{/*----------------------LIST-------------------------*/}
-      {todos.map(todo => 
-          <div className="todo-row" 
-                key={todo.id}>
-            {
-              todoEditing === todo.id 
-              ? 
-              <div className="input-edit-wrap">  
-                <input type="text" 
-                      onChange={(e) => setEditingText(e.target.value)} 
-                      value={editingText}/>
-                <input type="text" 
-                      onChange={(e) => setEditingDesc(e.target.value)} 
-                      value={editingDesc}/>
-              </div>
-              : 
-              <div className="input-show">
-                <p className="input-show-name">{todo.text}</p>
-                <p className="input-show-desc">{todo.description}</p>
-                <p className="input-show-time">
-                  <span className="span-time">{todo.timeCreate}</span>
-                </p>
-                <p className="input-show-time">
-                  <span className="span-time">{todo.timeUpdate}</span>
-                </p>
-              </div>
-            }
-              {/* 'todo' is changable */}
-             
-              <div className="buttons">
-                <input type="checkbox" 
-                        onChange={() => toggleComplete(todo.id)}
-                        checked={todo.completed}
-                        className="check-complete"/>
-                {
-                  todoEditing === todo.id 
-                  ? <button className="submit-edit-btn" 
-                            onClick={() => editTodo(todo.id)}>
-                      Submit Edit
-                    </button>
-                  : <button className="edit-btn" 
-                            onClick={() => setTodoEditing(todo.id)}>
-                      Edit Tasks
-                    </button>
-                }
-                  <button className="delete-btn" 
-                        onClick={() => deleteTodo(todo.id)}>
-                    Delete
-                  </button>
-              </div>
-            
-            </div>
-            )}
+    <div className='update-wrapper'>
+      <div className='update-wrapper-texts'>
+        <p>Hello, thank you for stopping by.</p>
+        <p>This project has been updated to a full-stack application.</p>
+        <p>
+          <span>Let's checkout the demo here: </span>
+            <a  className='update-link' href="https://todo-app-mern-frontendld.vercel.app/" target='_blank' rel="noopener noreferrer">
+              https://todo-app-mern-frontendld.vercel.app/
+            </a>
+        </p>
+        <p>
+          <span>This is the source code: </span>
+            <a className='update-link' href="https://github.com/liamdoan/todo_app_mern" target='_blank' rel="noopener noreferrer">
+              https://github.com/liamdoan/todo_app_mern
+            </a>
+        </p>
+      </div>
     </div>
+//     <div className="wrapper">
+//       <h1>Tasks for today</h1>
+
+// {/*-----------FORM---------------*/}
+//       <form className="todo-form" onSubmit={handleSubmit}>
+//         <div className="input-column">
+//           <input type="text" 
+//                   placeholder="What to do"
+//                   onChange={(e) => setTodo(e.target.value)}
+//                   value={todo}
+//                   className="todo-input"/>
+//           <input type="text" 
+//                   placeholder="Description"
+//                   onChange={(e) => setDesc(e.target.value)}
+//                   value={desc}
+//                   className="desc-input"/>
+//         </div>
+//         <button className="submit-button" 
+//                 type="submit"
+//                 >
+//                   Add Tasks
+//         </button>
+//       </form>
+
+// {/*----------------------LIST-------------------------*/}
+//       {todos.map(todo => 
+//           <div className="todo-row" 
+//                 key={todo.id}>
+//             {
+//               todoEditing === todo.id 
+//               ? 
+//               <div className="input-edit-wrap">  
+//                 <input type="text" 
+//                       onChange={(e) => setEditingText(e.target.value)} 
+//                       value={editingText}/>
+//                 <input type="text" 
+//                       onChange={(e) => setEditingDesc(e.target.value)} 
+//                       value={editingDesc}/>
+//               </div>
+//               : 
+//               <div className="input-show">
+//                 <p className="input-show-name">{todo.text}</p>
+//                 <p className="input-show-desc">{todo.description}</p>
+//                 <p className="input-show-time">
+//                   <span className="span-time">{todo.timeCreate}</span>
+//                 </p>
+//                 <p className="input-show-time">
+//                   <span className="span-time">{todo.timeUpdate}</span>
+//                 </p>
+//               </div>
+//             }
+//               {/* 'todo' is changable */}
+             
+//               <div className="buttons">
+//                 <input type="checkbox" 
+//                         onChange={() => toggleComplete(todo.id)}
+//                         checked={todo.completed}
+//                         className="check-complete"/>
+//                 {
+//                   todoEditing === todo.id 
+//                   ? <button className="submit-edit-btn" 
+//                             onClick={() => editTodo(todo.id)}>
+//                       Submit Edit
+//                     </button>
+//                   : <button className="edit-btn" 
+//                             onClick={() => setTodoEditing(todo.id)}>
+//                       Edit Tasks
+//                     </button>
+//                 }
+//                   <button className="delete-btn" 
+//                         onClick={() => deleteTodo(todo.id)}>
+//                     Delete
+//                   </button>
+//               </div>
+            
+//             </div>
+//             )}
+//     </div>
   )
 }
 

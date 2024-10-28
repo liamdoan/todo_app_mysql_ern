@@ -5,6 +5,38 @@
   body {
     background: linear-gradient(90deg, rgba(93, 12, 255, 1) 0%,
     rgba(155, 0, 250, 1) 100%);
+    margin: 0;
+    padding: 0;
+  }
+
+  .update-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .update-wrapper-texts {
+    background: linear-gradient(
+      90deg,
+      rgb(92, 175, 235) 0%,
+      rgb(12, 79, 167) 100%
+    );
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    width: fit-content;
+  }
+
+  .update-link {
+    color: white;
+    font-style: italic;
+    font-size: 0.9rem;
+    transition: 0.3s; 
+  }
+  .update-link:hover {
+    font-size: 1rem;
   }
   
   .wrapper {
