@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'password',
+    password: process.env.MYSQL_PASSWORD,
     database: 'todo_app_react'
 });
 
