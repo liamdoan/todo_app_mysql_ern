@@ -169,9 +169,11 @@ const App = () => {
                                     </span>
                                 </p>
                                 <p className="input-show-time">
-                                    <span className="span-time">
-                                        Updated at: {new Date(todo.updated_at).toLocaleString()}
-                                    </span>
+                                    {todo.updated_at !== null && (
+                                        <span className="span-time">
+                                            Updated at: {new Date(todo.updated_at).toLocaleString()}
+                                        </span>
+                                    )}
                                 </p>
                             </div>
                         )}
