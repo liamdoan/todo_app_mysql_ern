@@ -153,7 +153,11 @@ let time = String(new window.Date())
                             : 
                             <button
                                 className="edit-btn" 
-                                onClick={() => setTodoEditing(todo.id)}
+                                onClick={() => {
+                                    setTodoEditing(todo.id)
+                                    setEditingText(todo.text)
+                                    setEditingDesc(todo.description)
+                                }}
                             >
                                 Edit Tasks
                             </button>
