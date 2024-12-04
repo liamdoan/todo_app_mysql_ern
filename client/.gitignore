@@ -22,6 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
+**/*.psd
 
 #https://liamdoan.github.io/todo_web_app
